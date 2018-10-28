@@ -12,9 +12,9 @@ homepage = "https://github.com/ChristianMurphy/problem-space-py"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-z3 = "^0.2.0"
 frontmatter = "^3.0"
-pyicu = "^2.2"
+z3-solver = "^4.8"
+inflect = "^1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
