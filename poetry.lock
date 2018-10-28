@@ -178,8 +178,8 @@ python-versions = "*"
 version = "4.8.0.0.post1"
 
 [metadata]
-content-hash = "f516fa1a7cc43ef81c8b37f01b3252812d04683aee92594ca25035d5941b60a2"
-python-versions = "^3.7"
+content-hash = "0086e9cae05bcb32bd2c76369a6b366ee4aee5324c689413dcfd7b041bbd171b"
+python-versions = "^3.6"
 
 [metadata.hashes]
 appdirs = ["9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92", "d8b24664561d0d34ddfaec54636d502d7cea6e29c3eaf68f3df6180863e2166e"]
