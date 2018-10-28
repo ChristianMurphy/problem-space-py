@@ -1,7 +1,7 @@
-from z3 import Int, Or, sat, Solver
 from inflect import engine
+from problem_space.dz3 import dynamicSolver
 
-def main () :
+def main():
     p = engine()
 
     # Question template
@@ -10,36 +10,19 @@ def main () :
     n1 = "Steven"
     n2 = "Elizabeth"
 
-
-    # Set question contstraints
-    s = Solver()
-    x = Int("x")
-    y = Int("y")
-    z = Int("z")
-
-    s.add(x + y == z)
-    s.add(x > 0)
-    s.add(y > 0)
-    s.add(z > 0)
-    s.add(x <= 10)
-    s.add(y <= 10)
-    s.add(z <= 10)
-
-    # While there are still more questions
-    while s.check() == sat:
-        # print question and answer
+    for s in dynamicSolver(
+        ['x = Int("x")', 'y = Int("y")', 'z = Int("z")'],
+        ["x + y == z", "x > 0", "y > 0", "z > 0", "x <= 10", "y <= 10", "z <= 10"],
+    ):
         print(
             q.format(
                 n1=n1,
                 n2=n2,
-                x=s.model()[x],
-                x_o=p.plural_noun(o, s.model()[x]),
-                y=s.model()[y],
-                y_o=p.plural_noun(o, s.model()[y]),
-                z=s.model()[z],
-                z_o=p.plural_noun(o, s.model()[z]),
+                x=s["x"],
+                x_o=p.plural_noun(o, s["x"]),
+                y=s["y"],
+                y_o=p.plural_noun(o, s["y"]),
+                z=s["z"],
+                z_o=p.plural_noun(o, s["z"]),
             )
         )
-
-        # don't repeat questions
-        s.add(Or(x != s.model()[x], y != s.model()[y], z != s.model()[z]))
