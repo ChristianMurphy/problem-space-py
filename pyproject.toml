@@ -3,6 +3,7 @@ name = "problem-space"
 version = "0.1.0"
 description = "Takes a question template, creates questions in the problems space"
 authors = ["Christian Murphy <Christian.Murphy.42@gmail.com>"]
+readme = "README.md"
 
 license = "Apache-2.0"
 
