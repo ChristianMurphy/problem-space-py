@@ -1,5 +1,7 @@
 # problem-space
 
+[![Build Status](https://travis-ci.com/ChristianMurphy/problem-space-py.svg?branch=master)](https://travis-ci.com/ChristianMurphy/problem-space-py)
+
 for Python
 
 > Takes a question template, creates questions in the problems space
