@@ -10,7 +10,6 @@ license = "Apache-2.0"
 repository = "https://github.com/ChristianMurphy/problem-space-py"
 homepage = "https://github.com/ChristianMurphy/problem-space-py"
 
-
 [tool.poetry.dependencies]
 python = "^3.7"
 z3 = "^0.2.0"
@@ -23,7 +22,7 @@ black = "^18.3-alpha.0"
 mypy = "^0.641.0"
 
 [tool.poetry.scripts]
-problem-space = 'problem-space:main'
+problem-space = 'problem_space.cli:main'
 
 [build-system]
 requires = ["poetry>=0.12"]
