@@ -3,12 +3,23 @@ name = "problem-space"
 version = "0.1.0"
 description = "Takes a question template, creates questions in the problems space"
 authors = ["Christian Murphy <Christian.Murphy.42@gmail.com>"]
+
 license = "Apache-2.0"
 
+repository = "https://github.com/ChristianMurphy/problem-space-py"
+homepage = "https://github.com/ChristianMurphy/problem-space-py"
+
+
 [tool.poetry.dependencies]
-python = "^2.7"
+python = "^3.7"
+z3 = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
+pytest = "^3.0"
+black = "^18.3-alpha.0"
+
+[tool.poetry.scripts]
+problem-space = 'problem-space:main'
 
 [build-system]
 requires = ["poetry>=0.12"]
