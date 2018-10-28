@@ -1,6 +1,7 @@
 from z3 import *
 from typing import Iterator, Dict, Callable
 
+
 def modelToDict(model: Dict) -> Dict:
     """converts z3 keys to string keys"""
     dict = {}
@@ -8,13 +9,19 @@ def modelToDict(model: Dict) -> Dict:
         dict[str(key)] = model[key]
     return dict
 
+
 def noRepeat(locals: Dict, model: Dict) -> Callable:
     """creates a new constraint to prevent repeat values"""
+
     def createConstraint(key):
         return locals[key] != model[locals[key]]
+
     return Or(*map(createConstraint, locals))
 
-def dynamicSolver(variables: Iterator[str], contraints: Iterator[str]) -> Iterator[Dict]:
+
+def dynamicSolver(
+    variables: Iterator[str], contraints: Iterator[str]
+) -> Iterator[Dict]:
     """returns a list of solutions to the given constraints"""
     s = Solver()
     z3Locals = {}
