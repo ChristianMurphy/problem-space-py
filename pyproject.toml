@@ -14,10 +14,13 @@ homepage = "https://github.com/ChristianMurphy/problem-space-py"
 [tool.poetry.dependencies]
 python = "^3.7"
 z3 = "^0.2.0"
+frontmatter = "^3.0"
+pyicu = "^2.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
 black = "^18.3-alpha.0"
+mypy = "^0.641.0"
 
 [tool.poetry.scripts]
 problem-space = 'problem-space:main'
