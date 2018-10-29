@@ -14,7 +14,7 @@ math:
     - z <= 20
 ---
 
-{x} ^ 2 + {y} ^ 2 = z ^ 2
+Given {x} ^ 2 + {y} ^ 2 = z ^ 2
 What is z?
 
 Answer {z}
