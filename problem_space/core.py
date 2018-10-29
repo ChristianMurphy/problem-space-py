@@ -1,10 +1,12 @@
 from inflect import engine
 from problem_space.dz3 import dynamicSolver
 
+
 def applyContants(template, values):
     if "constants" in template["attributes"]:
         return {**values, **template["attributes"]["constants"]}
     return values
+
 
 def applyPluralization(template, values):
     if "pluralize" in template["attributes"]:
@@ -13,6 +15,7 @@ def applyPluralization(template, values):
                 values[e["source"]], values[e["counter"]]
             )
     return values
+
 
 def problem_space(template):
     p = engine()
