@@ -1,9 +1,9 @@
 ---
 math:
   variables:
-    - x = Int("x")
-    - y = Int("y")
-    - z = Int("z")
+    x: Int
+    y: Int
+    z: Int
   constraints:
     - x * x + y * y == z * z
     - x > 0

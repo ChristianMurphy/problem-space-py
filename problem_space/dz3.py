@@ -26,10 +26,14 @@ def dynamicSolver(
     s = Solver()
     z3Locals = {}
     # generate z3 variables
-    for variable in variables:
+    for var in variables:
         # FIXME: find a better way to define the variables than dynamically
         # executing Python strings
-        exec(variable, globals(), z3Locals)
+        exec(
+            '{var} = {type}("{var}")'.format(var=var, type=variables[var]),
+            globals(),
+            z3Locals,
+        )
     # add constraints to solver
     for contraint in contraints:
         # FIXME: find a better way to define the constraints than dynamically

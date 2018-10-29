@@ -3,8 +3,9 @@ from problem_space.dz3 import dynamicSolver
 from frontmatter import Frontmatter
 from click import command, option
 
+
 @command()
-@option('-i', '--input', required=True, help='File to load.')
+@option("-i", "--input", required=True, help="File to load.")
 def main(input):
     file = Frontmatter.read_file(input)
 
