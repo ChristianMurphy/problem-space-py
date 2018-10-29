@@ -1,4 +1,4 @@
-from problem_space.core import problem_space
+from problem_space.core import problemSpace
 from click import command, option
 from frontmatter import Frontmatter
 
@@ -8,5 +8,5 @@ from frontmatter import Frontmatter
 def main(input):
     template = Frontmatter.read_file(input)
 
-    for solution in problem_space(template):
+    for solution in problemSpace(template):
         print(solution)

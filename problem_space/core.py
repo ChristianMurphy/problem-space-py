@@ -10,6 +10,7 @@ def applyContants(template, values):
 
 def applyPluralization(template, values):
     if "pluralize" in template["attributes"]:
+        p = engine()
         for e in template["attributes"]["pluralize"]:
             values[e["destination"]] = p.plural_noun(
                 values[e["source"]], values[e["counter"]]
@@ -17,8 +18,7 @@ def applyPluralization(template, values):
     return values
 
 
-def problem_space(template):
-    p = engine()
+def problemSpace(template):
     values = {}
 
     if "math" in template["attributes"]:
