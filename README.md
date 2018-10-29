@@ -11,7 +11,7 @@ for Python
 ### CLI
 
 ```sh
-problem-space
+problem-space --input example/addition.md
 ```
 
 ## Local Development
