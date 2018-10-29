@@ -1,8 +1,13 @@
 from inflect import engine
 from problem_space.dz3 import dynamicSolver
+from frontmatter import Frontmatter
 
 
 def main():
+    file = Frontmatter.read_file("examples/addition.md")
+
+    print(file["body"])
+
     p = engine()
 
     # Question template
@@ -12,18 +17,14 @@ def main():
     n2 = "Elizabeth"
 
     for s in dynamicSolver(
-        ['x = Int("x")', 'y = Int("y")', 'z = Int("z")'],
-        ["x + y == z", "x > 0", "y > 0", "z > 0", "x <= 10", "y <= 10", "z <= 10"],
+        file["attributes"]["math"]["variables"],
+        file["attributes"]["math"]["constraints"],
     ):
-        print(
-            q.format(
-                n1=n1,
-                n2=n2,
-                x=s["x"],
-                x_o=p.plural_noun(o, s["x"]),
-                y=s["y"],
-                y_o=p.plural_noun(o, s["y"]),
-                z=s["z"],
-                z_o=p.plural_noun(o, s["z"]),
+        values = {**file["attributes"]["constants"], **s}
+
+        for e in file["attributes"]["pluralize"]:
+            values[e["destination"]] = p.plural_noun(
+                values[e["source"]], values[e["counter"]]
             )
-        )
+
+        print(file["body"].format(**values))

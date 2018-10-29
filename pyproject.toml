@@ -15,6 +15,7 @@ python = "^3.6"
 frontmatter = "^3.0"
 z3-solver = "^4.8"
 inflect = "^1.0"
+sparqlwrapper = "^1.8"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
