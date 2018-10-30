@@ -8,5 +8,5 @@ from frontmatter import Frontmatter
 def main(input):
     template = Frontmatter.read_file(input)
 
-    for solution in problemSpace(template):
+    for solution in problemSpace(template=template):
         print(solution)
