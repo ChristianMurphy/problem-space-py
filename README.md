@@ -12,6 +12,8 @@ for Python
 
 ```sh
 problem-space --input example/addition.md
+# alternatively
+poetry run problem-space --input example/addition.md
 ```
 
 ## Local Development
